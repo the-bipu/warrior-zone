@@ -45,7 +45,7 @@
     {:else}
       <div class="flex flex-col w-auto gap-4">
         {#each posts as item}
-          <div class="border border-dashed border-black">
+          <div class="border border-dashed border-black rounded shadow bg-white">
             <h2>{item.username}</h2>
             <p><strong>Confession:</strong> {item.confession}</p>
             <p><strong>Type:</strong> {item.type}</p>
