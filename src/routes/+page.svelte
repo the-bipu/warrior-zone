@@ -26,18 +26,8 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section class="flex-1 flex flex-col justify-center items-center w-full">
+<section class={`flex-1 flex flex-col justify-center items-center w-full`}>
   <div>
-    <h1 class="uppercase text-xl font-bold">
-      The Subtle Art of not giving a fuck
-    </h1>
-
-    <button on:click={toggleTheme}>
-      Switch to {$theme === "light" ? "Dark" : "Light"} Mode
-    </button>
-
-    <p>Current theme: {$theme}</p>
-
     {#if error}
       <p>Error: {error}</p>
     {:else if posts.length === 0}
@@ -45,7 +35,7 @@
     {:else}
       <div class="flex flex-col w-auto gap-4">
         {#each posts as item}
-          <div class="border border-dashed border-black rounded shadow bg-white">
+          <div class="border border-dashed border-black rounded-2xl shadow bg-white p-4">
             <h2>{item.username}</h2>
             <p><strong>Confession:</strong> {item.confession}</p>
             <p><strong>Type:</strong> {item.type}</p>
