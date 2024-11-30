@@ -7,6 +7,8 @@
   import { BiBookmark } from "svelte-icons-pack/bi";
   import { BiComment } from "svelte-icons-pack/bi";
 
+  let toggleCommentVisibility: boolean[] = [];
+
   function toggleTheme() {
     theme.update((current) => (current === "light" ? "dark" : "light"));
   }
@@ -24,6 +26,10 @@
       error = err.message;
     }
   });
+
+  function toggleComments(index: number) {
+    toggleCommentVisibility[index] = !toggleCommentVisibility[index];
+  }
 </script>
 
 <svelte:head>
@@ -31,7 +37,7 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section class={`flex-1 flex flex-col justify-center items-center w-full`}>
+<section class="flex-1 flex flex-col justify-center items-center w-full">
   <div>
     {#if error}
       <p>Error: {error}</p>
@@ -39,7 +45,7 @@
       <p>Loading...</p>
     {:else}
       <div class="flex flex-row flex-wrap w-auto gap-4">
-        {#each posts as item}
+        {#each posts as item, index}
           <div
             class="border border-dashed border-black rounded-xl shadow bg-white p-4 relative"
           >
@@ -59,38 +65,46 @@
                 {item.saves}
               </div>
 
-              <div class="flex flex-col items-center justify-center">
+              <button
+                type="button"
+                class="flex flex-col items-center justify-center"
+                on:click={() => toggleComments(index)}
+                aria-expanded={toggleCommentVisibility[index]}
+                aria-label={`Toggle comments for ${item.username}'s post`}
+              >
                 <Icon src={BiComment} className="w-6 h-6" />
                 {item.comments.length}
+              </button>
+            </div>
+
+            {#if toggleCommentVisibility[index]}
+              <div class="mt-4 border-t pt-2">
+                <h3 class="text-lg font-semibold">Comments</h3>
+                <ul>
+                  {#each item.comments as comment}
+                    <li class="mt-2">
+                      <strong>{comment.username}:</strong>
+                      {comment.message}
+                      {#if comment.replies.length > 0}
+                        <ul class="ml-4">
+                          {#each comment.replies as reply}
+                            <li>
+                              <strong>{reply.username}:</strong>
+                              {reply.message}
+                            </li>
+                          {/each}
+                        </ul>
+                      {/if}
+                    </li>
+                  {/each}
+                </ul>
               </div>
-            </div>
+            {/if}
 
-            <div>
-              <p><strong>Comments:</strong></p>
-              <ul>
-                {#each item.comments as comment}
-                  <li>
-                    <strong>{comment.username}:</strong>
-                    {comment.message}
-                    {#if comment.replies.length > 0}
-                      <ul>
-                        {#each comment.replies as reply}
-                          <li>
-                            <strong>{reply.username}:</strong>
-                            {reply.message}
-                          </li>
-                        {/each}
-                      </ul>
-                    {/if}
-                  </li>
-                {/each}
-              </ul>
-            </div>
-
-            <p>
+            <!-- <p>
               <strong>Created At:</strong>
               {new Date(item.createdAt).toLocaleString()}
-            </p>
+            </p> -->
           </div>
         {/each}
       </div>
