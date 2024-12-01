@@ -44,10 +44,10 @@
     {:else if posts.length === 0}
       <p>Loading...</p>
     {:else}
-      <div class="flex flex-row flex-wrap w-auto gap-4">
+      <div class="flex flex-col w-auto gap-4">
         {#each posts as item, index}
           <div
-            class="border border-dashed border-black rounded-xl shadow bg-white p-4 relative"
+            class="w-96 shadow bg-white p-4 relative"
           >
             <h2 class="capitalize">By, {item.username}</h2>
             <div class="mt-2 mb-6">{item.confession}</div>
@@ -56,12 +56,12 @@
 
             <div class="flex flex-row gap-4">
               <div class="flex flex-col items-center justify-center">
-                <Icon src={AiTwotoneHeart} className="w-6 h-6" />
+                <Icon src={AiTwotoneHeart} className="w-6 h-6 cursor-pointer" />
                 {item.likes}
               </div>
 
               <div class="flex flex-col items-center justify-center">
-                <Icon src={BiBookmark} className="w-6 h-6" />
+                <Icon src={BiBookmark} className="w-6 h-6 cursor-pointer" />
                 {item.saves}
               </div>
 
