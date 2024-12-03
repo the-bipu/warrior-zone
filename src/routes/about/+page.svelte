@@ -1,26 +1,18 @@
 <svelte:head>
-	<title>About</title>
-	<meta name="description" content="About this app" />
+  <title>About</title>
+  <meta name="description" content="About this app" />
 </svelte:head>
 
 <div class="text-column">
-	<h1>About this app</h1>
+  <h1 class="font-medium text-2xl">About this app</h1>
 
-	<p>
-		This is a <a href="https://svelte.dev/docs/kit">SvelteKit</a> app. You can make your own by typing
-		the following into your command line and following the prompts:
-	</p>
-
-	<pre>npx sv create</pre>
-
-	<p>
-		The page you're looking at is purely static HTML, with no client-side interactivity needed.
-		Because of that, we don't need to load any JavaScript. Try viewing the page's source, or opening
-		the devtools network panel and reloading.
-	</p>
-
-	<p>
-		The <a href="/">Sverdle</a> page illustrates SvelteKit's data loading and form handling. Try
-		using it with JavaScript disabled!
-	</p>
+  <div class="text-center mt-2">
+    This is a <a href="https://svelte.dev/docs/kit">SvelteKit</a> app. I created
+    it for people who want to share their terrible experiences—whether about their
+    day or any situation. Initially, I made this app for myself when I was having
+    a horrible day and regretted being too shy to express my feelings. Then, I realized
+    I wasn't the only one who has faced such moments, so I decided to make it public.
+    Now, anyone can share their experiences here, and the best part is that it's
+    completely anonymous—no one is watching you.
+  </div>
 </div>
