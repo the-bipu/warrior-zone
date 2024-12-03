@@ -42,17 +42,27 @@
     {#if error}
       <p>Error: {error}</p>
     {:else if posts.length === 0}
-      <p>Loading...</p>
+      <div class="pyramid-loader">
+        <div class="wrapper">
+          <span class="side side1"></span>
+          <span class="side side2"></span>
+          <span class="side side3"></span>
+          <span class="side side4"></span>
+          <span class="shadow"></span>
+        </div>
+      </div>
     {:else}
       <div class="flex flex-col w-auto gap-4">
         {#each posts as item, index}
           <div
-            class={`w-96 shadow p-4 relative ${$theme == 'dark' ? 'bg-[#eaeaea] text-[#1a1a1a]' : 'bg-[#1a1a1a] text-[#eee]'}`}
+            class={`w-96 shadow p-4 relative ${$theme == "dark" ? "bg-[#eaeaea] text-[#1a1a1a]" : "bg-[#1a1a1a] text-[#eee]"}`}
           >
             <h2 class="capitalize">By, {item.username}</h2>
             <div class="mt-2 mb-6">{item.confession}</div>
 
-            <span class="absolute right-0 top-0 px-3 py-1 shadow">{item.type}</span>
+            <span class="absolute right-0 top-0 px-3 py-1 shadow"
+              >{item.type}</span
+            >
 
             <div class="flex flex-row gap-4">
               <div class="flex flex-col items-center justify-center">
