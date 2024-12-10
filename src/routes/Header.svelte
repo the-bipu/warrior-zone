@@ -10,7 +10,7 @@
   }
 </script>
 
-<header>
+<header class="flex justify-between px-5">
   <div class="corner">
     <a href="/">
       <img src={logo} alt="SvelteKit" />
@@ -42,37 +42,12 @@
     </div>
 
     <button on:click={toggleTheme}>
-      {$theme === "light" ? "Dark" : "Light"}
+      {$theme === "light" ? "D" : "L"}
     </button>
   </div>
 </header>
 
 <style>
-  header {
-    display: flex;
-    justify-content: space-between;
-	padding: 0px 10px;
-  }
-
-  .corner {
-    width: 3em;
-    height: 3em;
-  }
-
-  .corner a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-  }
-
-  .corner img {
-    width: 2em;
-    height: 2em;
-    object-fit: contain;
-  }
-
   nav {
     display: flex;
     justify-content: center;
