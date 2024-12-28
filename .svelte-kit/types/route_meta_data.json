@@ -13,5 +13,8 @@
 	],
 	"/confession": [
 		"src/routes/confession/+page.ts"
+	],
+	"/contact": [
+		"src/routes/contact/+page.ts"
 	]
 }
