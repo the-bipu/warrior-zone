@@ -3,32 +3,9 @@
   import { theme } from "../stores/theme";
 
   import { Icon } from "svelte-icons-pack";
-  import { AiTwotoneHeart } from "svelte-icons-pack/ai";
-  import { BiBookmark } from "svelte-icons-pack/bi";
-  import { BiComment } from "svelte-icons-pack/bi";
-
-  let toggleCommentVisibility: boolean[] = [];
 
   function toggleTheme() {
     theme.update((current) => (current === "light" ? "dark" : "light"));
-  }
-
-  let posts: any[] = [];
-  let error: string | null = null;
-
-  onMount(async () => {
-    try {
-      const response = await fetch("/api/getdata");
-      if (!response.ok) throw new Error("Failed to fetch posts");
-      posts = await response.json();
-      console.log(posts);
-    } catch (err: any) {
-      error = err.message;
-    }
-  });
-
-  function toggleComments(index: number) {
-    toggleCommentVisibility[index] = !toggleCommentVisibility[index];
   }
 </script>
 
@@ -37,87 +14,21 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<section class="flex-1 flex flex-col justify-center items-center w-full">
-  <div>
-    {#if error}
-      <p>Error: {error}</p>
-    {:else if posts.length === 0}
-      <div class="pyramid-loader">
-        <div class="wrapper">
-          <span class="side side1"></span>
-          <span class="side side2"></span>
-          <span class="side side3"></span>
-          <span class="side side4"></span>
-          <span class="shadow"></span>
-        </div>
-      </div>
-    {:else}
-      <div class="flex flex-col w-auto gap-4">
-        {#each posts as item, index}
-          <div
-            class={`w-96 shadow p-4 relative ${$theme == "dark" ? "bg-[#eaeaea] text-[#1a1a1a]" : "bg-[#1a1a1a] text-[#eee]"}`}
-          >
-            <h2 class="capitalize">By, {item.username}</h2>
-            <div class="mt-2 mb-6">{item.confession}</div>
-
-            <span class="absolute right-0 top-0 px-3 py-1 shadow"
-              >{item.type}</span
-            >
-
-            <div class="flex flex-row gap-4">
-              <div class="flex flex-col items-center justify-center">
-                <Icon src={AiTwotoneHeart} className="w-6 h-6 cursor-pointer" />
-                {item.likes}
-              </div>
-
-              <div class="flex flex-col items-center justify-center">
-                <Icon src={BiBookmark} className="w-6 h-6 cursor-pointer" />
-                {item.saves}
-              </div>
-
-              <button
-                type="button"
-                class="flex flex-col items-center justify-center"
-                on:click={() => toggleComments(index)}
-                aria-expanded={toggleCommentVisibility[index]}
-                aria-label={`Toggle comments for ${item.username}'s post`}
-              >
-                <Icon src={BiComment} className="w-6 h-6" />
-                {item.comments.length}
-              </button>
-            </div>
-
-            {#if toggleCommentVisibility[index]}
-              <div class="mt-4 border-t pt-2">
-                <h3 class="text-lg font-semibold">Comments</h3>
-                <ul>
-                  {#each item.comments as comment}
-                    <li class="mt-2">
-                      <strong>{comment.username}:</strong>
-                      {comment.message}
-                      {#if comment.replies.length > 0}
-                        <ul class="ml-4">
-                          {#each comment.replies as reply}
-                            <li>
-                              <strong>{reply.username}:</strong>
-                              {reply.message}
-                            </li>
-                          {/each}
-                        </ul>
-                      {/if}
-                    </li>
-                  {/each}
-                </ul>
-              </div>
-            {/if}
-
-            <!-- <p>
-              <strong>Created At:</strong>
-              {new Date(item.createdAt).toLocaleString()}
-            </p> -->
-          </div>
-        {/each}
-      </div>
-    {/if}
+<section class="flex flex-col justify-center items-center w-full">
+  <div class="w-10/12 h-full py-24 text-white">
+    <div class="text-lg font-medium mb-2">
+      Express freely what you feel, no one is here;
+    </div>
+    <div class="text-6xl font-light md:w-[550px] w-full leading-[52px] nightshade">
+      Explore, Discover and write your own worst.
+    </div>
+    <div class="flex flex-row gap-4 mt-8">
+      <button class="border-2 border-[#fffffff2] backdrop-blur hover:shadow rounded-tl-md rounded-br-md px-6 py-2"
+        >Explore</button
+      >
+      <button class="border-2 border-[#fffffff2] backdrop-blur hover:shadow rounded-tl-md rounded-br-md px-6 py-2"
+        >Confess</button
+      >
+    </div>
   </div>
 </section>
