@@ -14,7 +14,7 @@
 </script>
 
 <header
-  class="absolute top-0 left-0 w-24 h-screen backdrop-blur-sm flex flex-col items-center justify-between py-4 border-r-2 border-r-[#ffffff9d]"
+  class="fixed top-0 left-0 w-24 h-screen backdrop-blur-sm flex flex-col items-center justify-between py-4 border-r-2 border-r-[#ffffff9d]"
 >
   <div class="corner">
     <a href="/">
