@@ -41,6 +41,11 @@ body {
     );
 }
 
+html::-webkit-scrollbar{
+  scrollbar-width: none;
+  overflow: none;
+}
+
 .nightshade {
   font-family: var(--font-nightshade);
 }
