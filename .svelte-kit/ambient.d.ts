@@ -27,10 +27,6 @@
  */
 declare module '$env/static/private' {
 	export const MONGODB_URL: string;
-	export const NEXT_PUBLIC_MAIN_ROUTE: string;
-	export const ROUTE_ID: string;
-	export const NEXT_PUBLIC_ROUTE_ID: string;
-	export const RESEND: string;
 	export const ALLUSERSPROFILE: string;
 	export const APPDATA: string;
 	export const COLOR: string;
@@ -134,10 +130,6 @@ declare module '$env/static/public' {
 declare module '$env/dynamic/private' {
 	export const env: {
 		MONGODB_URL: string;
-		NEXT_PUBLIC_MAIN_ROUTE: string;
-		ROUTE_ID: string;
-		NEXT_PUBLIC_ROUTE_ID: string;
-		RESEND: string;
 		ALLUSERSPROFILE: string;
 		APPDATA: string;
 		COLOR: string;

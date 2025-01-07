@@ -14,6 +14,9 @@
 	"/confession": [
 		"src/routes/confession/+page.ts"
 	],
+	"/confess": [
+		"src/routes/confess/+page.ts"
+	],
 	"/contact": [
 		"src/routes/contact/+page.ts"
 	]
