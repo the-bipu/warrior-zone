@@ -42,23 +42,23 @@
   <div class="w-10/12 h-full py-24 text-white">
     <h1 class="font-bold text-2xl uppercase">Confess Here</h1>
 
-    <div class="w-1/2 h-full text-justify text-lg font-normal mt-4 backdrop-blur-sm text-black flex flex-col gap-4">
+    <div class="w-1/2 h-full text-justify text-base font-normal mt-4 rounded-xl text-black flex flex-col gap-4">
       <input
         type="text"
-        class="indent-2"
+        class="indent-2 backdrop-blur-sm bg-transparent rounded pb-0.5 text-white focus:border-none outline-none placeholder:text-sm"
         placeholder="Username Here..."
         bind:value={username}
       />
       <textarea
-        class="indent-2"
+        class="pl-2 min-h-80 backdrop-blur-sm bg-transparent rounded pt-1 text-white focus:border-none outline-none placeholder:text-sm"
         placeholder="Confession Here..."
         bind:value={confession}
       ></textarea>
-      <select name="type" id="type" bind:value={type}>
-        <option value="general">General</option>
-        <option value="heartbreak">Heartbreak</option>
+      <select name="type" id="type" bind:value={type} class="h-7 backdrop-blur-sm bg-transparent focus:border-none outline-none text-sm text-white indent-2">
+        <option value="general" class="text-black">General</option>
+        <option value="heartbreak" class="text-black">Heartbreak</option>
       </select>
-      <button on:click={submitConfession} class="px-4 py-2 bg-[#00000076] text-white rounded">
+      <button on:click={submitConfession} class="px-4 py-2 bg-[#fffa] font-black text-black rounded">
         Submit
       </button>
     </div>

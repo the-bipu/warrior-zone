@@ -49,7 +49,7 @@
     <Icon src={BiSearch} />
   </button>
   <div
-    class={`bg-[#00000023] w-9 h-9 rounded-full text-white shadow cursor-pointer ${isSearchOpen ? "w-48 flex justify-between items-center px-3" : "hidden"}`}
+    class={`bg-[#00000023] rounded-full text-white shadow cursor-pointer ${isSearchOpen ? "w-48 h-9 flex justify-between items-center px-3" : "hidden"}`}
   >
     <Icon src={BiSearch} on:click={toggleSearch} />
     <input
@@ -68,8 +68,9 @@
     <img src={dots} alt="dots" class="w-8 h-8" />
   </button>
 </div>
+
 <div
-  class={`fixed top-0 ${isSidebarOpen ? "w-0 opacity-0" : "right-0"} w-80 h-screen backdrop-blur-sm flex flex-col items-center justify-start pt-16 border-l-2 border-l-[#ffffff9d] shadow overflow-y-auto`}
+  class={`fixed top-0 ${isSidebarOpen ? "w-0 opacity-0 -right-80" : "right-0"} w-80 h-screen backdrop-blur-sm flex flex-col items-center justify-start pt-16 border-l-2 border-l-[#ffffff9d] shadow overflow-y-auto`}
   style="scrollbar-width: none; -ms-overflow-style: none;"
 >
   <div class="flex w-10/12 h-auto text-xl font-bold text-white pb-4">
@@ -90,7 +91,7 @@
       </div>
     {:else}
       <div class="flex flex-col w-full gap-4">
-        {#each posts as item, index}
+        {#each posts.slice(0,3) as item, index}
           <div class="text-white font-bold text-lg">#0{index + 1}</div>
           <img src={post2} alt="" class="w-full h-40 rounded-lg shadow object-cover" />
           <div class={`w-full relative text-white`}>
