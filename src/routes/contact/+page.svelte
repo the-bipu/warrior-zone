@@ -1,18 +1,31 @@
+<script>
+  import github from "$lib/images/github.png";
+  import moon from "$lib/images/moon.png";
+  import sun from "$lib/images/sun.png";
+  import x from "$lib/images/x.svg";
+</script>
+
 <svelte:head>
-  <title>About</title>
-  <meta name="description" content="About this app" />
+  <title>Contact Us</title>
+  <meta name="description" content="Contact Us" />
 </svelte:head>
 
-<div class="text-column">
-  <h1 class="font-medium text-2xl">Dummy Contact Page</h1>
+<div class="flex flex-col items-center justify-start w-full h-full">
+  <div class="w-10/12 h-full py-24 text-white">
+    <h1 class="font-bold text-2xl uppercase">Contact Us</h1>
 
-  <div class="text-center mt-2">
-    This is a <a href="https://svelte.dev/docs/kit">SvelteKit</a> app. I created
-    it for people who want to share their terrible experiences—whether about their
-    day or any situation. Initially, I made this app for myself when I was having
-    a horrible day and regretted being too shy to express my feelings. Then, I realized
-    I wasn't the only one who has faced such moments, so I decided to make it public.
-    Now, anyone can share their experiences here, and the best part is that it's
-    completely anonymous—no one is watching you.
+    <div class="w-10/12 h-full mt-4">
+      <div class="flex flex-row justify-start items-center w-10/12">
+        <div class="text-left mt-2 backdrop-blur-sm">
+          <div class="mb-4">
+            If any queries, you can reach us on:
+          </div>
+          <div class="flex flex-row gap-4">
+            <img src={github} alt="GitHub" class="p-1 border border-white bg-[#d72b2b9c] w-10 h-10 rounded" />
+            <img src={x} alt="GitHub" class="p-1.5 border border-white bg-[#d72b2b9c] w-10 h-10 rounded" />
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
