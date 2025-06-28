@@ -1,6 +1,6 @@
 <svelte:head>
-  <title>About</title>
-  <meta name="description" content="About this app" />
+  <title>About | Warrior Zone</title>
+  <meta name="description" content="Learn more about Warrior Zone, a SvelteKit app for sharing experiences anonymously and supporting each other." />
 </svelte:head>
 
 <div class="flex flex-col items-center justify-start w-full min-h-screen">

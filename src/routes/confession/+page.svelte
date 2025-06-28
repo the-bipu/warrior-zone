@@ -37,8 +37,10 @@
 </script>
 
 <svelte:head>
-  <title>Confessions</title>
-  <meta name="description" content="All Confessions" />
+  <title>Confessions | Warrior Zone</title>
+  <meta name="description" content="Read anonymous confessions from the Warrior Zone community. Share your thoughts and see what others have to say." />
+  <meta property="og:title" content="Confessions | Warrior Zone" />
+  <meta property="og:description" content="Read anonymous confessions from the Warrior Zone community. Share your thoughts and see what others have to say." />
 </svelte:head>
 
 <div class="flex flex-col items-center justify-start w-full h-full">

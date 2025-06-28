@@ -1,13 +1,11 @@
 <script>
   import github from "$lib/images/github.png";
-  import moon from "$lib/images/moon.png";
-  import sun from "$lib/images/sun.png";
   import x from "$lib/images/x.svg";
 </script>
 
 <svelte:head>
-  <title>Contact Us</title>
-  <meta name="description" content="Contact Us" />
+  <title>Contact Us | Warrior Zone</title>
+  <meta name="description" content="Get in touch with the Warrior Zone team. Reach out for queries, support, or collaboration." />
 </svelte:head>
 
 <div class="flex flex-col items-center justify-start w-full h-full">

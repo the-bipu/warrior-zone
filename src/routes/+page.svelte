@@ -7,8 +7,8 @@
 </script>
 
 <svelte:head>
-  <title>Home</title>
-  <meta name="description" content="Svelte demo app" />
+  <title>Warrior Zone | Home</title>
+  <meta name="description" content="Welcome to Warrior Zone - Express, discover, and share your thoughts freely on our homepage." />
 </svelte:head>
 
 <section class="flex flex-col justify-center items-center w-full">

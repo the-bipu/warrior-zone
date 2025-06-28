@@ -1,6 +1,6 @@
 <svelte:head>
-  <title>Confess</title>
-  <meta name="description" content="Confess Here" />
+  <title>Confess Your Feelings</title>
+  <meta name="description" content="Share your feelings anonymously and let your heart speak. Confess anything that's on your mind." />
 </svelte:head>
 
 <script>
