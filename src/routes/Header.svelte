@@ -14,7 +14,7 @@
 </script>
 
 <header
-  class="fixed top-0 left-0 w-24 h-screen backdrop-blur-sm flex flex-col items-center justify-between py-4 border-r-2 border-r-[#ffffff9d]"
+  class="fixed top-0 left-0 md:w-24 w-full md:h-screen h-20 backdrop-blur-sm flex md:flex-col flex-row items-center justify-between py-4 md:px-0 px-6 border-r-2 border-r-[#ffffff9d]"
 >
   <div class="corner">
     <a href="/">
@@ -22,7 +22,7 @@
     </a>
   </div>
 
-  <div class="flex flex-row gap-8 -rotate-90">
+  <div class="md:flex hidden flex-row gap-8 md:-rotate-90 rotate-0">
     <div aria-current={$page.url.pathname === "/" ? "page" : undefined}>
       <a href="/" class="text-white">Home</a>
     </div>
@@ -37,7 +37,7 @@
     </div>
   </div>
 
-  <div class="flex flex-col gap-5 items-center justify-center">
+  <div class="flex md:flex-col flex-row md:gap-5 gap-2 items-center justify-center">
     <img src={github} alt="GitHub" class="w-5 h-5" />
     <img src={x} alt="GitHub" class="w-4 h-4" />
     <button on:click={toggleTheme}>

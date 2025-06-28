@@ -12,10 +12,10 @@
 </svelte:head>
 
 <section class="flex flex-col justify-center items-center w-full">
-  <div class="w-10/12 h-full py-24 text-white">
-    <div class="text-lg font-medium mb-2">Express freely what you feel;</div>
+  <div class="md:w-10/12 w-11/12 h-full py-24 text-white">
+    <div class="md:text-lg text-base md:font-medium font-light mb-2 md:pl-0 pl-2">Express freely what you feel;</div>
     <div
-      class="text-6xl font-light md:w-[550px] w-full leading-[52px] nightshade"
+      class="md:text-6xl text-5xl font-light md:w-[550px] w-full md:leading-[52px] leading-[40px] nightshade"
     >
       Explore, Discover and write your own worst.
     </div>

@@ -40,7 +40,7 @@
 </script>
 
 <div
-  class={`fixed flex flex-row items-center justify-center gap-2 ${isSidebarOpen ? "right-4" : "right-80 mr-4"} top-4`}
+  class={`fixed md:flex hidden flex-row items-center justify-center gap-2 ${isSidebarOpen ? "right-4" : "right-80 mr-4"} top-4`}
 >
   <button
     on:click={toggleSearch}
@@ -70,7 +70,7 @@
 </div>
 
 <div
-  class={`fixed top-0 ${isSidebarOpen ? "w-0 opacity-0 -right-80" : "right-0"} w-80 h-screen backdrop-blur-sm flex flex-col items-center justify-start pt-16 border-l-2 border-l-[#ffffff9d] shadow overflow-y-auto`}
+  class={`fixed top-0 ${isSidebarOpen ? "w-0 opacity-0 -right-80" : "right-0"} w-80 h-screen backdrop-blur-sm md:flex hidden flex-col items-center justify-start pt-16 border-l-2 border-l-[#ffffff9d] shadow overflow-y-auto`}
   style="scrollbar-width: none; -ms-overflow-style: none;"
 >
   <div class="flex w-10/12 h-auto text-xl font-bold text-white pb-4">
